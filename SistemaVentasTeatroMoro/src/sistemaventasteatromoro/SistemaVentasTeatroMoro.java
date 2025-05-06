@@ -58,10 +58,11 @@ public class SistemaVentasTeatroMoro {
         GestionVentas gestionVentas = new GestionVentas(gestionDescuentos);
         GestionReservas gestionReservas = new GestionReservas();
 
+        System.out.println("\n--- Bienvenido al Sistema de Ventas y Reservas del Teatro Moro ---\n");
+        
         int opcion;
 
         do {
-            System.out.println("\n--- Bienvenido al Sistema de Ventas y Reservas del Teatro Moro ---\n");
             System.out.println("--- Gestión de Asientos ---");
             System.out.println("1. Mostrar Estado de Asientos");
             System.out.println("2. Realizar Venta");
@@ -79,11 +80,11 @@ public class SistemaVentasTeatroMoro {
             System.out.println("\n--- General ---");
             System.out.println("9. Ayuda");
             System.out.println("0. Salir");
-            System.out.print("Seleccione una opción: ");
+            System.out.print("\nSeleccione una opción: ");
 
             if (scanner.hasNextInt()) {
                 opcion = scanner.nextInt();
-                scanner.nextLine(); // Consumir la nueva línea
+                scanner.nextLine();
 
                 switch (opcion) {
                     case 1:
@@ -182,7 +183,7 @@ public class SistemaVentasTeatroMoro {
                             }
                         } else {
                             System.out.println("ID de reserva inválido. Ingrese un número.");
-                            scanner.nextLine(); // Limpiar entrada incorrecta
+                            scanner.nextLine();
                         }
                         break;
                     case 5:
@@ -197,7 +198,7 @@ public class SistemaVentasTeatroMoro {
                         String tipoCliente = "";
                         boolean tipoValido = false;
                         while (!tipoValido) {
-                            System.out.print("Ingrese el tipo de cliente (Estudiante, Tercera Edad, General): ");
+                            System.out.print("\nIngrese el tipo de cliente (Estudiante, Tercera Edad, General): ");
                             tipoCliente = scanner.nextLine();
                             if (tipoCliente.equalsIgnoreCase("Estudiante")
                                     || tipoCliente.equalsIgnoreCase("Tercera Edad")
@@ -278,8 +279,8 @@ public class SistemaVentasTeatroMoro {
                 }
             } else {
                 System.out.println("Opción inválida. Ingrese un número del menú.");
-                scanner.nextLine(); // Limpiar entrada incorrecta
-                opcion = -1; // Para que el bucle continúe
+                scanner.nextLine();
+                opcion = -1;
             }
         } while (opcion != 0);
 
